@@ -11,6 +11,7 @@ solutionlist- this is the actual list that contains lists of solutuions. each li
 templist- this is the temporary solution list that numbers are added to and taken away from until a match is found.
 
 Testing Program: in the main method different arrays of numbers are generated and tested, and the solutions are printed.
+
 Inputs and Outputs: Input Example inputs to the solver and the expected output.
 PUBLIC METHOD INPUTS AND OUTPUTS: 
       INPUTS:  an array of numbers, and a sumtarget
