@@ -2,14 +2,32 @@ import java.util.List;
 import java.util.ArrayList;
 public class CombinationSum {
     public static void main(String[] args) {
+        
+        //standard test
         int[] numbers = {2,5,7,9};
         int target = 7;
-        List<List<Integer>> solution =combinationSum(numbers,target);
-        System.out.println(solution);
+        List<List<Integer>> solution =combinationSum(numbers,target); //standard test
+        System.out.println("standard test: "+ solution);
 
-        int[] numbers1 = {1,2,3,4,5,6,7,8,9,10};
+        //target doesnt exist test
+        int[] numbers1 = {2,2,2,2,}; 
         solution =combinationSum(numbers1,target);
-        System.out.println(solution);
+        System.out.println("\n target doesnt exist: "+ solution);
+
+        //test with empty list
+        int[] numbers2 = {}; 
+        solution =combinationSum(numbers2,target);
+        System.out.println("\n empty list: "+ solution);
+
+        //test with all elements equal to target
+        int[] numbers3 = {7,7,7,7}; 
+        solution =combinationSum(numbers3,target);
+        System.out.println("\n all elements equal target: "+ solution);
+        //test with target 0
+        target = 0;
+        int[] numbers4 = {7,7,7,7}; 
+        solution =combinationSum(numbers4,target);
+        System.out.println("\n target is 0: " + solution);
 
     }
     /* this is the method the user will call to find
@@ -34,6 +52,7 @@ public class CombinationSum {
         if(ind == numbers.length) {                                                            //base case if all indexes have been tried and
             if(sumTarget == 0) {                                                               //if the sum target gets decremented to zero
                 solutionList.add(new ArrayList<>(tempList));                                   //then we can add the solutions to the list
+                                              
             }
             return;                                                                            //return from recursion once all indices checked
         }
